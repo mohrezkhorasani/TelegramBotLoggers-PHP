@@ -1,0 +1,43 @@
+# ==============================================================================
+# Telegram Bot Logger - Apache / LiteSpeed .htaccess Configuration
+# ==============================================================================
+
+# Disable directory browsing
+Options -Indexes
+
+# Enable URL Rewriting
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Prevent direct access to .env, storage, and hidden files
+    RewriteRule ^\.env.*$ - [F,L]
+    RewriteRule ^storage/.*$ - [F,L]
+    RewriteRule ^\.git.*$ - [F,L]
+
+    # Route all requests to index.php if not an existing file or folder
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
+
+# Security: Block sensitive files (Apache 2.4 and 2.2 compatibility)
+<FilesMatch "^\.env|composer\.(json|lock)|Dockerfile|docker-compose\.yml|README\.md">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Block access to storage directory directly
+<FilesMatch "^(bot_index\.txt|.*\.lock|.*\.log)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>

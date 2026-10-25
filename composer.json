@@ -1,0 +1,28 @@
+{
+  "name": "mohrezkhorasani/telegram-bot-logger",
+  "description": "High-performance round-robin Telegram bot logger with automatic failover and load balancing.",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mohrez Khorasani"
+    }
+  ],
+  "require": {
+    "php": ">=8.1",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "TelegramLogger\\": "src/"
+    },
+    "files": [
+      "src/autoload.php"
+    ]
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  }
+}

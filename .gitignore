@@ -1,0 +1,23 @@
+# Environment files & Secrets
+.env
+*.env
+*.env.*
+!.env.example
+
+# Composer dependencies
+/vendor/
+
+# Storage files (runtime state & logs)
+/storage/*.txt
+/storage/*.log
+/storage/*.lock
+!/storage/.gitignore
+!/storage/.htaccess
+
+# IDE & OS files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
