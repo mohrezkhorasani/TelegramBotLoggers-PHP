@@ -4,6 +4,13 @@
 
 ---
 
+## 🔗 پروژه‌های مرتبط (Related Repositories)
+
+- 🔷 **نسخه دات‌نت (.NET Core):** [TelegramBotLoggers-DotNet](https://github.com/mohrezkhorasani/TelegramBotLoggers-DotNet)
+- 📌 **ریپازیتوری اولیه پروژه:** [TelegramBotLoggers](https://github.com/mohrezkhorasani/TelegramBotLoggers)
+
+---
+
 ## 🌟 ویژگی‌ها (Key Features)
 
 - 🔄 **توزیع بار چرخشی (Round-Robin Load Balancing):** درخواست‌ها به ترتیب بین ۱۱ ربات تلگرام تقسیم می‌شوند تا از لیمیت و خطای 429 تلگرام جلوگیری شود.
